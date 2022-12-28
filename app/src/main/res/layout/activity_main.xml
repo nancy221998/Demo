@@ -30,6 +30,7 @@
             android:background="#fff"
             android:gravity="left|center"
             android:hint="Search by title... "
+            android:textColorHint="@color/progress_shader_color"
             android:padding="10dp"
             android:textSize="12sp"
             android:textColor="@color/black"
@@ -61,6 +62,7 @@
         android:text="Search Image with Name"
         android:textSize="@dimen/_14sdp"
         android:gravity="center"
+        android:textColor="@color/progress_shader_color"
         android:layout_centerInParent="true"
         android:fontFamily="@font/montserrat_bold"/>
 

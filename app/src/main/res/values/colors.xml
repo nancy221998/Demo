@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorAccent">#E31500</color>
     <color name="green">#00B640</color>
+    <color name="progress_shader_color">#9b9b9b</color>
 </resources>

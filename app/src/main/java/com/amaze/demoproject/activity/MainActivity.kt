@@ -63,11 +63,10 @@ import com.amaze.demoproject.util.setStatusBarColor
          val temp: MutableList<ImageModel> = ArrayList<ImageModel>()
         if(imageModel.size>0) {
             for (d in imageModel) {
-                if (d.name.toLowerCase().contains(text.toLowerCase()) || d.date.toLowerCase()
-                        .contains(text.toLowerCase())
+                if (d.name.trim().toLowerCase().contains(text.trim().toLowerCase())
                  ) {
                     temp.add(d)
-                    if(d.name.toLowerCase().equals(text.toLowerCase())){
+                    if(d.name.trim().toLowerCase().equals(text.trim().toLowerCase())){
                         if(!searchImageList.contains(d))
                         {
                             searchImageList.add(d)
@@ -76,8 +75,7 @@ import com.amaze.demoproject.util.setStatusBarColor
                      }
                 }
             }
-            recycleList.visibility=View.VISIBLE
-            hintText.visibility=View.GONE
+
         }
     }
 
@@ -88,6 +86,13 @@ import com.amaze.demoproject.util.setStatusBarColor
 
     fun setDataInList(){
         Log.d("searchImageList",searchImageList.size.toString())
+        if(searchImageList.size==0){
+            recycleList.visibility=View.GONE
+            hintText.visibility=View.VISIBLE
+        }else{
+            recycleList.visibility=View.VISIBLE
+            hintText.visibility=View.GONE
+        }
          recycleList.apply {
              if(layoutType==1){
                  layoutManager= LinearLayoutManager(this@MainActivity)
